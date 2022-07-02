@@ -25,4 +25,17 @@ public class Tree<T extends Comparable<T>> {
             traversal(root.right);
         }
     }
+    public Node search(Node current, T key){
+        if(current==null){
+            System.out.println("Tree is empty");
+        }
+        int compareResult = key.compareTo((T) current.key);
+        if(compareResult==0){
+            return current;
+        } else if (compareResult<0) {
+            return search(current.left, key);
+        } else {
+            return search(current.right,key);
+        }
+    }
 }

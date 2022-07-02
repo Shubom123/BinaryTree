@@ -1,7 +1,8 @@
 package com.binarytree;
+import java.util.Scanner;
 
 public class Operations {
-    public static void add(){
+    public static void addAndSearch(){
         Tree<Integer> tree = new Tree<>();
         Node root = new Node(56);
         System.out.println("Building tree with root value " + root.key);
@@ -18,5 +19,10 @@ public class Operations {
         tree.insert(root,63);
         tree.insert(root,67);
         tree.traversal(root);
+        System.out.println("Enter a number you want to search in a tree");
+        Scanner scanner=new Scanner(System.in);
+        int data = scanner.nextInt();
+        tree.search(root,data);
+        System.out.println("We found the number: "+ data);
     }
 }
